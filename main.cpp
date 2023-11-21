@@ -5,7 +5,7 @@ int main(){
     
     GameController game = GameController();
 
-    while(game.executeApp());
+    game.executeApp();
 
     return 0;
 }

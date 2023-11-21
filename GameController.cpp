@@ -1,17 +1,9 @@
 
-enum menuOptions {
-    errorDefault = 0,
-    playGame = 1,
-    howToPlay = 2,
-    exitGame = 3,
-    viewDetailed = 1,
-    backToMain = 2,
-};
-
 #ifndef CONTROLLER
 #define CONTROLLER
 
 #include "ViewControl.cpp"
+#include "AppState.cpp"
 #include <iostream>
 
 using namespace std;
@@ -20,73 +12,134 @@ class GameController{
 
 private:
     ViewControl* view;
+    AppState* state;
 
 public:
 
     GameController(){
-        view = new ViewControl();
+        state = new AppState();
+        view = new ViewControl(state);
     }
 
-    bool executeApp(){
-        int result;
-        
+    void executeApp(){
+    
     display_main:
-        result = view->displayMainMenu();
+        state->setMenu(menu_main);
+        view->updateView();
 
-        // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
-        menuOptions choice = static_cast<menuOptions>(result);
-        if(choice == errorDefault) goto display_main;
-
-        switch(choice){
-            case playGame:
+        switch(state->useUserAction()){
+            case act_play_game:
                 runGame();
-                break;
+                goto display_main;
 
-            case howToPlay:
+            case act_how_play:
                 gameInstructions();
-                break;
+                goto display_main;
 
-            case exitGame:
-                return false;
-                break;
+            case act_exit:
+                return;
+
+            default:
+                goto display_main;
         }
-
-        return true;
     }
 
     void gameInstructions(){
 
-        int result;
-
     display_instructions:
-        result = view->displayInstructions();
+        state->setMenu(menu_instructions);
+        view->updateView();
+    
+        switch(state->useUserAction()){
+            case act_detailed_instructions:
+                goto display_detailed_instructions;
+            case act_back_main:
+                return;
+            default:
+                goto display_instructions;
+        }
 
-        // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
-        menuOptions choice = static_cast<menuOptions>(result);
-        if(choice == errorDefault) goto display_instructions;
+    display_detailed_instructions:
+        state->setMenu(menu_detailed_instructions);
+        view->updateView();
 
-        if(choice == backToMain)
-            return;
-
-    detailed_instructions:
-        result = view->displayDetailedInstructions();
-
-        // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
-        choice = static_cast<menuOptions>(result);
-        if(choice == errorDefault) goto detailed_instructions;
-
-        if(choice == backToMain)
-            return;
+        switch(state->useUserAction()){
+            case act_back_main:
+                return;
+            default:
+                goto display_detailed_instructions;
+        }
     }
 
     void runGame(){
 
-        int result;
+    setup:
+        state->setMenu(menu_name_director);
+        view->updateView();
 
-        // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
-        menuOptions choice = static_cast<menuOptions>(result);
+        // Intake Director Name and send to the state
+
+        state->setMenu(menu_select_monster);
+        view->updateView();
+
+        // Add Monster to the list of monsters in the state
+
+        state->setMenu(menu_place_monster);
+        view->updateView();
+
+        state->setMenu(menu_ask_player_count);
+        view->updateView();
         
+        state->setMenu(menu_ask_player_count);
+        view->updateView();
+
+        // Get Player Count
+
+        int count = state->getPlayerCount();
+        for(int i = 0; i < count; i++){
+            state->setMenu(menu_character_select);
+            view->updateView();
+        }
+        // Player Count Ask & Setup
+
+        // Deal Cards to all players & Game Start
+
+    gameplay:
+        // Continually check if all players are dead to kick to end of game
+
+        // Process a Turn
+            // Process movement
+            // Process Actions
+            // Process Draw
+
+        // Process Director Turn
+            // Process Roll
+            // Process actions/movement
+
+        // Process a round
+            // Process Dilemma Resolution 
+                // Process in turn order
+            // Process Hunger Pangs
+                // Process in turn order
+
+        // Check for finished deck, if not loop, if yes end game
+
+    game_finish:
+        state->setMenu(menu_win_screen);
+        view->updateView();
+
+        switch(state->useUserAction()){
+            case act_replay:
+                goto setup;
+
+            case act_back_main:
+                return;
+
+            default:
+                goto game_finish;
+        }
     }
+
 
 };
 

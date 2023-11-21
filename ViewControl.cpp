@@ -5,23 +5,29 @@ class ViewControl {
 
 private:
 
+    AppState* state;
+
 public:
-    ViewControl(){
-
+    ViewControl(AppState* appState){
+        this->state = appState;
     }
 
-    int displayMainMenu(){
-
-        return 0;
+    void updateView(){
+        // logic for which view is drawn based on conditions of the appstate
     }
 
-    int displayInstructions(){
+    void displayMainMenu(){
 
-        return 0;
+        state->setUserAction(act_default);
+    }
+
+    void displayInstructions(){
+
+        state->setUserAction(act_default);
     }
   
-    int displayDetailedInstructions(){
+    void displayDetailedInstructions(){
 
-        return 0;
+        state->setUserAction(act_default);
     }
 };
