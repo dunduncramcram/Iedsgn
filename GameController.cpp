@@ -97,12 +97,29 @@ public:
 
         int count = state->getPlayerCount();
         for(int i = 0; i < count; i++){
+            state->nextPlayer();
             state->setMenu(menu_character_select);
             view->updateView();
-        }
-        // Player Count Ask & Setup
 
-        // Deal Cards to all players & Game Start
+            // Get A Player's Name and the Player's Chosen Character
+        }
+
+        state->setMenu(menu_before_start);
+        view->updateView();
+
+        // Place Player Pieces & Deal Cards to all players & Game Start
+        // Option to quit here, redo or to play the game
+
+        switch(state->useUserAction()){
+            case act_back_main:
+                return;
+            case act_back_setup:
+                goto setup;
+            case act_start_game:
+                goto gameplay;
+            default:
+                goto setup;
+        }
 
     gameplay:
         // Continually check if all players are dead to kick to end of game
@@ -129,7 +146,7 @@ public:
         view->updateView();
 
         switch(state->useUserAction()){
-            case act_replay:
+            case act_back_setup:
                 goto setup;
 
             case act_back_main:
