@@ -28,10 +28,14 @@ public:
     }
 
     bool executeApp(){
-        int result = mainMenu();
+        int result;
+        
+    display_main:
+        result = view->displayMainMenu();
 
         // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
         menuOptions choice = static_cast<menuOptions>(result);
+        if(choice == errorDefault) goto display_main;
 
         switch(choice){
             case playGame:
@@ -45,44 +49,36 @@ public:
             case exitGame:
                 return false;
                 break;
-
-            case errorDefault:
-                break;
         }
 
         return true;
     }
 
-    menuOptions mainMenu(){
-
-        int result = view->displayMainMenu();
-
-        // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
-        menuOptions choice = static_cast<menuOptions>(result);
-
-        return choice;
-    }
-
     void gameInstructions(){
 
-        int result = view->displayInstructions();
+        int result;
+
+    display_instructions:
+        result = view->displayInstructions();
 
         // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
         menuOptions choice = static_cast<menuOptions>(result);
+        if(choice == errorDefault) goto display_instructions;
 
         if(choice == backToMain)
             return;
 
-        if(choice == viewDetailed)
-            result = view->displayDetailedInstructions();
+    detailed_instructions:
+        result = view->displayDetailedInstructions();
 
         // Conversion & Error Handling of the result of the Displayed Menu into a Menu Option
         choice = static_cast<menuOptions>(result);
+        if(choice == errorDefault) goto detailed_instructions;
 
         if(choice == backToMain)
             return;
     }
-    
+
     void runGame(){
 
         int result;
