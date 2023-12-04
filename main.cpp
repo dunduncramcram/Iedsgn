@@ -1,11 +1,12 @@
 
-#include "GameController.cpp"
+#include "./GameStates/StatesRenderDefs.cpp"
+#include "./Definitions/GameController.cpp"
 
 int main(){
     
     GameController game = GameController();
 
-    game.executeApp();
+    game.runApplication();
 
     return 0;
 }
