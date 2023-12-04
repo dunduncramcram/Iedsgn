@@ -1,5 +1,6 @@
 
 #include "../MainHeaders/GameController.hpp"
+#include "../MainHeaders/State.hpp"
 #include "../GameStates/StatesHeader.hpp"
 #include <iostream>
 

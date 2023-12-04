@@ -21,13 +21,13 @@ state_beginning:
 
     switch(choice){
         case start_playing:
-            game->setState(new State_NamingDirector());
+            //game->setState(new State_NamingDirector());
             break;
         case see_instructions:
-            game->setState(new State_ShowingInstructions());
+            //game->setState(new State_ShowingInstructions());
             break;
         case quit_app:
-            game->setState(new State_ExitingApp());
+            //game->setState(new State_ExitingApp());
             break;
         default:
             goto state_beginning;

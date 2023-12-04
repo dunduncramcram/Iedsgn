@@ -1,7 +1,9 @@
 
 #include "StatesHeader.hpp"
 
-void State_MainMenu::stateRender(){
+using namespace std;
 
+void State_MainMenu::stateRender(){
+    cout << "Test" << endl ;
 };
 
