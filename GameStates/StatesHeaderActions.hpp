@@ -18,7 +18,7 @@ private:
 public:
     State_FathersAbility();
     ~State_FathersAbility();
-    void stateLogic();
+    void stateLogic(GameController* game);
     void stateRender();
 };
 
