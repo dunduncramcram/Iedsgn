@@ -104,22 +104,22 @@ public:
     void stateRender();
 };
 
-class State_DirectorTurn : public State {
-private:
-    enum stateOptions : unsigned int;
-public:
-    State_DirectorTurn();
-    ~State_DirectorTurn();
-    void stateLogic(GameController* game);
-    void stateRender();
-};
-
 class State_ResolvingDilemmas : public State {
 private:
     enum stateOptions : unsigned int;
 public:
     State_ResolvingDilemmas();
     ~State_ResolvingDilemmas();
+    void stateLogic(GameController* game);
+    void stateRender();
+};
+
+class State_DirectorTurn : public State {
+private:
+    enum stateOptions : unsigned int;
+public:
+    State_DirectorTurn();
+    ~State_DirectorTurn();
     void stateLogic(GameController* game);
     void stateRender();
 };
