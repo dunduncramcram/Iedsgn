@@ -9,16 +9,16 @@
 
 class Patient : public Player {
 private:
-    Character chosenCharacter;
-    Room currentRoom;
+    Character* chosenCharacter;
+    Room* currentRoom;
     unsigned int burdenCount;
     bool isDead;
     
 public:
     Patient(
         std::string name,
-        Character character
-    ) : Player(name) ;
+        Character* character
+    );
     ~Patient();
 
     Character getCharacter();

@@ -5,10 +5,7 @@
 #include "Player.hpp"
 #include <iostream>
 
-class Director {
-private:
-    std::string directorName;
-    
+class Director : Player {
 public:
     Director(
         std::string name

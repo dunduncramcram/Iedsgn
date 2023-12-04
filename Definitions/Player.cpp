@@ -1,28 +1,14 @@
 
-enum PlayerIDs{
-    player_none,
-    player_director,
-    player_one,
-    player_two,
-    player_three,
-    player_four,
-    player_five,
-    player_six,
+#include "../MainHeaders/Player.hpp"
+
+Player::Player(
+    std::string name
+) {
+    this->playerName = name;
 };
 
-class Player{
+Player::~Player(){};
 
-private:
-    PlayerIDs playerID = player_none;
-
-public:
-
-    Player(PlayerIDs id){
-        this->playerID = player_none;
-        this->playerID = id;
-    };
-
-    PlayerIDs getID(){
-        return this->playerID;
-    }
+std::string Player::getName(){
+    return this->playerName;
 };
