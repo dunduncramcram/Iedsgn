@@ -1,52 +1,44 @@
 
-#ifndef CONTROLLER
-#define CONTROLLER
-
-#include "ViewControl.cpp"
-#include "AppState.cpp"
+#include "../MainHeaders/GameController.hpp"
+#include "../GameStates/StatesHeader.hpp"
 #include <iostream>
 
-using namespace std;
+GameController::GameController(){
+    this->currentState = new State_MainMenu();
+};
 
-class GameController{
+GameController::~GameController(){};
 
+void GameController::runApplication(){
+    while (true) 
+        this->currentState->stateLogic(this);
+};
+
+void GameController::setState(State* newState){
+    this->currentState = newState;
+};
+
+/*
 private:
-    ViewControl* view;
-    AppState* state;
+    //ViewControl* view;
+    //AppState* state;
 
 public:
 
     GameController(){
-        state = new AppState();
-        view = new ViewControl(state);
+    //    state = new AppState();
+    //    view = new ViewControl(state);
     }
 
     void executeApp(){
     
-    display_main:
-        state->setMenu(menu_main);
-        view->updateView();
-
-        switch(state->useUserAction()){
-            case act_play_game:
-                runGame();
-                goto display_main;
-
-            case act_how_play:
-                gameInstructions();
-                goto display_main;
-
-            case act_exit:
-                return;
-
-            default:
-                goto display_main;
-        }
+        
     }
 
     void gameInstructions(){
 
     display_instructions:
+    /*
         state->setMenu(menu_instructions);
         view->updateView();
     
@@ -69,11 +61,13 @@ public:
             default:
                 goto display_detailed_instructions;
         }
+    
     }
 
     void runGame(){
 
     setup:
+    /*
         state->setMenu(menu_name_director);
         view->updateView();
 
@@ -159,5 +153,6 @@ public:
 
 
 };
+    
+*/
 
-#endif
