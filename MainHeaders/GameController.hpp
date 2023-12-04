@@ -3,11 +3,12 @@
 #define CONTROLLER_H
 
 #include "State.hpp"
+#include "Director.hpp"
 
 class GameController {
 private:
     State* currentState;
-
+    Director* gameDirector;
     
 public:
     GameController();
@@ -15,9 +16,8 @@ public:
 
     void runApplication();
 
-    void createDirector();
-
     void setState(State* newState);
+    void setDirector(Director* director);
 };
 
 #endif

@@ -15,5 +15,8 @@ state_beginning:
     stateRender();
 
     std::string input; std::getline(std::cin, input);
+
+    game->setDirector(new Director(input));
     
+    game->setState(new State_SummoningMonster());
 };
