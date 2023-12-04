@@ -9,23 +9,14 @@
 class Player {
 private:
     std::string playerName;
-    Character chosenCharacter;
-    Room currentRoom;
-    unsigned int burdenCount;
-    bool isDead;
     
 public:
     Player(
-        std::string name,
-        Character character
+        std::string name
     );
     ~Player();
 
     std::string getName();
-    Character getCharacter();
-    Room getRoom();
-    unsigned int getBurden();
-    bool isAlive();
 };
 
 #endif

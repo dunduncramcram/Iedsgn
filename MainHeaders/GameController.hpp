@@ -7,11 +7,15 @@
 class GameController {
 private:
     State* currentState;
+
+    
 public:
     GameController();
     ~GameController();
 
     void runApplication();
+
+    void createDirector();
 
     void setState(State* newState);
 };
