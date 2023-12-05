@@ -3,7 +3,7 @@
 #include "../Definitions/Director.cpp"
 
 enum State_RoundEnd::stateOptions : unsigned int {
-    deck_empty, deck_not_empty
+    deck_not_empty, deck_empty, 
 };
 
 State_RoundEnd::State_RoundEnd(){};

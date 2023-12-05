@@ -1,5 +1,4 @@
 
-
 #include "StatesHeader.hpp"
 
 enum State_DirectorTurn::stateOptions : unsigned int {
@@ -18,6 +17,8 @@ state_beginning:
 
     stateOptions
         choice = static_cast<stateOptions>(input);
+
+    // Process director actions
 
     switch(choice){
         case end_turn:

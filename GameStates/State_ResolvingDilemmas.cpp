@@ -13,6 +13,8 @@ void State_ResolvingDilemmas::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
-    
+    // Process dillema resolution per player
+
+    game->setState(new State_DirectorTurn());
     
 };

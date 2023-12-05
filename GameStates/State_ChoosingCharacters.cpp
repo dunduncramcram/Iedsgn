@@ -13,7 +13,7 @@ void State_ChoosingCharacters::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
-    std::cout << "filler text" << std::endl;
+    std::cout << "Need to iterate character choosing between patients based on patient count, then pushing to the patient vector in the game" << std::endl;
     
     game->setState(new State_DealingCards());
 };

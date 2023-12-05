@@ -21,7 +21,7 @@ state_beginning:
 
     switch(choice){
         case start_playing:
-            //game->setState(new State_NamingDirector());
+            game->setState(new State_NamingDirector());
             break;
         case see_instructions:
             game->setState(new State_ShowingInstructions());

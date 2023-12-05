@@ -18,5 +18,17 @@ state_beginning:
 
     std::cout << this->owner->getName() << "'s Filler Turn" << std::endl;
 
+    int input; std::cin >> input;
+    std::cin.ignore(); std::cin.clear();
+
+    stateOptions
+        choice = static_cast<stateOptions>(input);
+
+    // Process patient actions
+
+    switch(choice){
+        case end_turn:
+            game->setState(new State_HungerPangs());
+    }
 
 };
