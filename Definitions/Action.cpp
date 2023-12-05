@@ -1,12 +1,9 @@
 
 #include "../MainHeaders/Action.hpp"
+#include <iostream>
 
 enum Action::stateOptions : unsigned int {
     cancel_action, finished_action
-};
-
-Action::Action(State* currentState, std::string action_text){
-
 };
 
 Action::Action(State* currentState, std::string action_text){
@@ -16,17 +13,23 @@ Action::Action(State* currentState, std::string action_text){
 
 Action::~Action(){};
 
-Action::stateLogic(GameController* game){
+void Action::stateLogic(GameController* game){
+state_beginning:
+    stateRender();
 
-};
+    int input; std::cin >> input;
+    std::cin.ignore(); std::cin.clear();
 
-class Action : public State {
-protected:
-    enum stateOptions : unsigned int;
+    stateOptions
+        choice = static_cast<stateOptions>(input);
 
-    std::string actionText;
-public:
-    Action(std::string action_text);
-    ~Action();
-    void stateLogic(GameController* game);
+    switch(choice){
+        case cancel_action:
+            game->setState(previousState);
+            break;
+        case finished_action:
+            actionEffects(game);
+            game->setState(previousState);
+            break;
+    }
 };

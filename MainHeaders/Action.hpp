@@ -10,11 +10,12 @@ protected:
 
     State* previousState;
     std::string actionText;
-    
+
 public:
     Action(State* currentState, std::string action_text);
     ~Action();
     void stateLogic(GameController* game);
+    virtual void actionEffects(GameController* game);
 };
 
 #endif

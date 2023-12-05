@@ -3,6 +3,7 @@
 #define GAME_STATES_H
 
 #include "../MainHeaders/State.hpp"
+#include "../GameActions/ActionsHeader.hpp"
 
 class State_MainMenu : public State { 
 private:
