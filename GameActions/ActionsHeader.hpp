@@ -6,7 +6,7 @@
 
 class Action_SummoningMonster : public Action {
 public:
-    Action_SummoningMonster();
+    Action_SummoningMonster(State* previousState);
     ~Action_SummoningMonster();
     void stateRender();
     void actionEffects(GameController* game);
@@ -14,7 +14,7 @@ public:
 
 class Action_FathersAbility : public Action {
 public:
-    Action_FathersAbility();
+    Action_FathersAbility(State* previousState);
     ~Action_FathersAbility();
     void stateRender();
     void actionEffects(GameController* game);
