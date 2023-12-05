@@ -2,16 +2,26 @@
 
 #include "StatesHeader.hpp"
 
-enum State_name::stateOptions : unsigned int {
-    ,
+enum State_DirectorTurn::stateOptions : unsigned int {
+    end_turn, 
 };
 
-State_name::State_name(){};
-State_name::~State_name(){};
+State_DirectorTurn::State_DirectorTurn(){};
+State_DirectorTurn::~State_DirectorTurn(){};
 
-void State_name::stateLogic(GameController* game){
+void State_DirectorTurn::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
+    int input; std::cin >> input;
+    std::cin.ignore(); std::cin.clear();
+
+    stateOptions
+        choice = static_cast<stateOptions>(input);
+
+    switch(choice){
+        case end_turn:
+            game->setState(new State_HungerPangs());
+    }
     
 };

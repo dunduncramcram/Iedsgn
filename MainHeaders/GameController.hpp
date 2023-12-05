@@ -33,6 +33,9 @@ public:
     void nextTurn();
     void resetGameSetup();
 
+    void directorWin();
+    void patientsWin();
+
     Patient* getPatient(unsigned int player_number);
     unsigned int getPatientCount();
     Teams getWinner();
@@ -40,7 +43,6 @@ public:
     void setState(State* newState);
     void setDirector(Director* director);
     void setPatientCount(unsigned int count);
-    void setWinner(Teams winner);
 };
 
 #endif

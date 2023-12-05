@@ -1,17 +1,27 @@
 
-
 #include "StatesHeader.hpp"
+#include <iostream>
 
-enum State_name::stateOptions : unsigned int {
-    ,
+enum State_GameOver::stateOptions : unsigned int {
+    proceed
 };
 
-State_name::State_name(){};
-State_name::~State_name(){};
+State_GameOver::State_GameOver(){};
+State_GameOver::~State_GameOver(){};
 
-void State_name::stateLogic(GameController* game){
+void State_GameOver::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
+    int input; std::cin >> input;
+    std::cin.ignore(); std::cin.clear();
+
+    stateOptions
+        choice = static_cast<stateOptions>(input);
+
+    switch(choice){
+        case proceed:
+            game->setState(new State_AskReplay());
+    }
     
 };

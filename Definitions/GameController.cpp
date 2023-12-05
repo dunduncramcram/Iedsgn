@@ -42,6 +42,16 @@ void GameController::resetGameSetup(){
     this->current_turn = director_turn;
 };
 
+void GameController::directorWin(){
+    this->gameWinner = team_director;
+    this->setState(new State_GameOver());
+};
+
+void GameController::patientsWin(){
+    this->gameWinner = team_patients;
+    this->setState(new State_GameOver());
+};
+
 Patient* GameController::getPatient(unsigned int player_number){
     if(player_number > this->patient_count || player_number == 0 || player_number > patients.size())
         return NULL;
@@ -70,10 +80,6 @@ void GameController::setPatientCount(unsigned int count){
 
     while(count < patients.size())
         patients.erase(patients.begin());
-};
-
-void GameController::setWinner(GameController::Teams winner){
-    this->gameWinner = winner;
 };
 
 

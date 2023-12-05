@@ -2,16 +2,17 @@
 
 #include "StatesHeader.hpp"
 
-enum State_name::stateOptions : unsigned int {
-    ,
+enum State_ResolvingDilemmas::stateOptions : unsigned int {
+    finished_resolving
 };
 
-State_name::State_name(){};
-State_name::~State_name(){};
+State_ResolvingDilemmas::State_ResolvingDilemmas(){};
+State_ResolvingDilemmas::~State_ResolvingDilemmas(){};
 
-void State_name::stateLogic(GameController* game){
+void State_ResolvingDilemmas::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
+    
     
 };
