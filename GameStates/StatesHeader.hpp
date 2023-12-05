@@ -47,6 +47,8 @@ public:
 class State_NamingDirector : public State {
 private:
     enum stateOptions : unsigned int;
+    bool namedDirector;
+
 public:
     State_NamingDirector();
     ~State_NamingDirector();
@@ -57,8 +59,10 @@ public:
 class State_SummoningMonster : public State {
 private:
     enum stateOptions : unsigned int;
+    State* lastState;
+
 public:
-    State_SummoningMonster();
+    State_SummoningMonster(State* currentState);
     ~State_SummoningMonster();
     void stateLogic(GameController* game);
     void stateRender();
@@ -97,8 +101,10 @@ public:
 class State_PatientTurn : public State {
 private:
     enum stateOptions : unsigned int;
+    Patient* owner;
+
 public:
-    State_PatientTurn();
+    State_PatientTurn(Patient* turnOwner);
     ~State_PatientTurn();
     void stateLogic(GameController* game);
     void stateRender();

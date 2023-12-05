@@ -4,6 +4,12 @@
 #include "../GameStates/StatesHeader.hpp"
 #include <iostream>
 
+enum GameController::Turns : unsigned int {
+    director_turn = 0, 
+    patient_1_turn, patient_2_turn, patient_3_turn, 
+    patient_4_turn, patient_5_turn, patient_6_turn,
+};
+
 enum GameController::Teams : unsigned int {
     team_director, team_patients
 };
@@ -19,8 +25,25 @@ void GameController::runApplication(){
         this->currentState->stateLogic(this);
 };
 
+void GameController::nextTurn(){
+    if(current_turn == director_turn){
+        this->current_turn = patient_1_turn;
+        this->setState(new State_ResolvingDilemmas());
+    } else if (current_turn == patient_count){
+        this->current_turn = director_turn;
+        this->setState(new State_DirectorTurn());
+    } else {
+        this->current_turn = static_cast<Turns>(current_turn + 1);
+        this->setState(new State_PatientTurn(getPatient(current_turn)));
+    }
+};
+
+void GameController::resetGameSetup(){
+    this->current_turn = director_turn;
+};
+
 Patient* GameController::getPatient(unsigned int player_number){
-    if(player_number > this->patient_count || player_number == 0)
+    if(player_number > this->patient_count || player_number == 0 || player_number > patients.size())
         return NULL;
 
     return this->patients[player_number - 1];

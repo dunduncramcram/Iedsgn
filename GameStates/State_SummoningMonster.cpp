@@ -2,16 +2,30 @@
 
 #include "StatesHeader.hpp"
 
-enum State_name::stateOptions : unsigned int {
-    ,
+enum State_SummoningMonster::stateOptions : unsigned int {
+    finished_summoning
 };
 
-State_name::State_name(){};
-State_name::~State_name(){};
+State_SummoningMonster::State_SummoningMonster(State* currentState){
+    this->lastState = currentState;
+};
 
-void State_name::stateLogic(GameController* game){
+State_SummoningMonster::~State_SummoningMonster(){};
+
+void State_SummoningMonster::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
+    int input; std::cin >> input;
+    std::cin.ignore(); std::cin.clear();
+
+    stateOptions
+        choice = static_cast<stateOptions>(input);
     
+    switch(choice){
+        case finished_summoning:
+            game->setState(lastState);    
+            break;
+    }
+
 };

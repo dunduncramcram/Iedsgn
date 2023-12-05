@@ -21,7 +21,7 @@ state_beginning:
 
     switch(choice){
         case start_game:
-            game->setState(new State_PatientTurn());
+            game->nextTurn();
             break;
         case cancel_setup:
             game->setState(new State_MainMenu());

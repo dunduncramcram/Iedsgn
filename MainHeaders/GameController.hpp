@@ -13,6 +13,7 @@ class State;
 class GameController {
 
 public:
+    enum Turns : unsigned int;
     enum Teams : unsigned int;
 
 private:
@@ -20,6 +21,7 @@ private:
     Director* gameDirector;
     std::vector<Patient*> patients;
     unsigned int patient_count;
+    Turns current_turn;
     Teams gameWinner;
 
 public:
@@ -28,6 +30,8 @@ public:
     ~GameController();
 
     void runApplication();
+    void nextTurn();
+    void resetGameSetup();
 
     Patient* getPatient(unsigned int player_number);
     unsigned int getPatientCount();

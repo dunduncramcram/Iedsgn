@@ -1,17 +1,22 @@
 
-
 #include "StatesHeader.hpp"
+#include <iostream>
 
-enum State_name::stateOptions : unsigned int {
-    ,
+enum State_PatientTurn::stateOptions : unsigned int {
+    end_turn, 
 };
 
-State_name::State_name(){};
-State_name::~State_name(){};
+State_PatientTurn::State_PatientTurn(Patient* turnOwner){
+    this->owner = turnOwner;
+};
 
-void State_name::stateLogic(GameController* game){
+State_PatientTurn::~State_PatientTurn(){};
+
+void State_PatientTurn::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
-    
+    std::cout << this->owner->getName() << "'s Filler Turn" << std::endl;
+
+
 };
