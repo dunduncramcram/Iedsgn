@@ -3,7 +3,7 @@
 #include "../Definitions/Director.cpp"
 
 enum State_RoundEnd::stateOptions : unsigned int {
-    deck_not_empty, deck_empty, 
+    deck_not_empty, deck_empty, force_quit = 999999
 };
 
 State_RoundEnd::State_RoundEnd(){};
@@ -25,6 +25,9 @@ state_beginning:
             return;
         case deck_not_empty:
             break;
+        case force_quit:
+            game->directorWin();
+            return;
         default:
             return;
     }

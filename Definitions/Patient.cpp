@@ -11,3 +11,7 @@ Patient::Patient(
 };
 
 Patient::~Patient(){};
+
+bool Patient::isAlive(){
+    return !(this->isDead);
+};

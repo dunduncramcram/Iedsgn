@@ -28,7 +28,7 @@ state_beginning:
 
     switch(choice){
         case end_turn:
-            game->setState(new State_HungerPangs());
+            game->nextTurn();
     }
 
 };

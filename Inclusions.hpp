@@ -1,10 +1,25 @@
 
 #include "./Definitions/State.cpp"
 #include "./Definitions/GameController.cpp"
+#include "./Definitions/Player.cpp"
+#include "./Definitions/Patient.cpp"
 
 #include "./GameStates/StatesRenderDefs.cpp"
 #include "./GameStates/State_MainMenu.cpp"
 #include "./GameStates/State_ShowingInstructions.cpp"
 #include "./GameStates/State_ShowingDetailedInstructions.cpp"
 #include "./GameStates/State_ExitingApp.cpp"
+#include "./GameStates/State_NamingDirector.cpp"
+#include "./GameStates/State_SummoningMonster.cpp"
+#include "./GameStates/State_CountingPlayers.cpp"
+#include "./GameStates/State_ChoosingCharacters.cpp"
+#include "./GameStates/State_DealingCards.cpp"
+#include "./GameStates/State_PatientTurn.cpp"
+#include "./GameStates/State_ResolvingDilemmas.cpp"
+#include "./GameStates/State_DirectorTurn.cpp"
+#include "./GameStates/State_HungerPangs.cpp"
+#include "./GameStates/State_RoundEnd.cpp"
+#include "./GameStates/State_GameOver.cpp"
+#include "./GameStates/State_AskReplay.cpp"
+
 
