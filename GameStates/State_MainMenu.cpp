@@ -3,7 +3,7 @@
 #include <iostream>
 
 enum State_MainMenu::stateOptions : unsigned int {
-    start_playing, see_instructions, quit_app
+    start_playing = 1, see_instructions = 2, quit_app = 3
 };
 
 State_MainMenu::State_MainMenu(){};
