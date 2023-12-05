@@ -1,6 +1,6 @@
 
-#ifndef STATES_H
-#define STATES_H
+#ifndef GAME_STATES_H
+#define GAME_STATES_H
 
 #include "../MainHeaders/State.hpp"
 
