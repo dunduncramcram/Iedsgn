@@ -27,7 +27,5 @@ state_beginning:
         case show_detailed:
             game->setState(new State_ShowingDetailedInstructions());
             break;
-        default:
-            goto state_beginning;
     }
 };

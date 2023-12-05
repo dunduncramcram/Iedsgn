@@ -2,7 +2,7 @@
 #ifndef STATE_H
 #define STATE_H
 
-class GameController;
+#include "GameController.hpp"
 
 class State {
 protected:

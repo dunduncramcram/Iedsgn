@@ -4,6 +4,10 @@
 #include "../GameStates/StatesHeader.hpp"
 #include <iostream>
 
+enum GameController::Teams : unsigned int {
+    team_director, team_patients
+};
+
 GameController::GameController(){
     this->currentState = new State_MainMenu();
 };
@@ -15,9 +19,40 @@ void GameController::runApplication(){
         this->currentState->stateLogic(this);
 };
 
+Patient* GameController::getPatient(unsigned int player_number){
+    if(player_number > this->patient_count || player_number == 0)
+        return NULL;
+
+    return this->patients[player_number - 1];
+};
+
+unsigned int GameController::getPatientCount(){
+    return this->patient_count;
+};
+
+GameController::Teams GameController::getWinner(){
+    return this->gameWinner;
+};
+
 void GameController::setState(State* newState){
     this->currentState = newState;
 };
+
+void GameController::setDirector(Director* director){
+    this->gameDirector = director;
+};
+
+void GameController::setPatientCount(unsigned int count){
+    this->patient_count = count;
+
+    while(count < patients.size())
+        patients.erase(patients.begin());
+};
+
+void GameController::setWinner(GameController::Teams winner){
+    this->gameWinner = winner;
+};
+
 
 /*
 private:

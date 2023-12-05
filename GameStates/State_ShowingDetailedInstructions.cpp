@@ -23,7 +23,5 @@ state_beginning:
         case back_to_main:
             game->setState(new State_MainMenu);
             break;
-        default:
-            goto state_beginning;
     }
 };

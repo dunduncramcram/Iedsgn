@@ -14,9 +14,9 @@ void State_NamingDirector::stateLogic(GameController* game){
 state_beginning:
     stateRender();
 
-    std::string input; std::getline(std::cin, input);
+    std::string input_name; std::getline(std::cin, input_name);
 
-    game->setDirector(new Director(input));
+    game->setDirector(new Director(input_name));
     
     game->setState(new State_SummoningMonster());
 };

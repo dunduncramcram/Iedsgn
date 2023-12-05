@@ -29,7 +29,5 @@ state_beginning:
         case quit_app:
             game->setState(new State_ExitingApp());
             break;
-        default:
-            goto state_beginning;
     }
 };
