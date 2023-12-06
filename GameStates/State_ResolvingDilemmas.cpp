@@ -11,7 +11,7 @@ State_ResolvingDilemmas::~State_ResolvingDilemmas(){};
 
 void State_ResolvingDilemmas::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     // Process dillema resolution per player
 

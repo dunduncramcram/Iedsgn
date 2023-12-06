@@ -18,7 +18,7 @@ void State_NamingDirector::stateLogic(GameController* game){
     return;
 
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     game->resetGameSetup();
 

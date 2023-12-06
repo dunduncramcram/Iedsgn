@@ -11,7 +11,7 @@ State_ShowingDetailedInstructions::~State_ShowingDetailedInstructions(){};
 
 void State_ShowingDetailedInstructions::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

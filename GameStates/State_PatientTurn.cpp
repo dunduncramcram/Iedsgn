@@ -14,7 +14,7 @@ State_PatientTurn::~State_PatientTurn(){};
 
 void State_PatientTurn::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     std::cout << this->owner->getName() << "'s Filler Turn" << std::endl;
 

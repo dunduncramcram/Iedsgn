@@ -11,7 +11,7 @@ State_RoundEnd::~State_RoundEnd(){};
 
 void State_RoundEnd::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

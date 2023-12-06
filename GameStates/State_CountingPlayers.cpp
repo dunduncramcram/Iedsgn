@@ -11,7 +11,7 @@ State_CountingPlayers::~State_CountingPlayers(){};
 
 void State_CountingPlayers::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int count_input; std::cin >> count_input;
     std::cin.ignore(); std::cin.clear();

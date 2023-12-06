@@ -12,7 +12,7 @@ State_ShowingInstructions::~State_ShowingInstructions(){};
 
 void State_ShowingInstructions::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

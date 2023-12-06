@@ -11,7 +11,7 @@ State_MainMenu::~State_MainMenu(){};
 
 void State_MainMenu::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

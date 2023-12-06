@@ -10,7 +10,7 @@ State_DirectorTurn::~State_DirectorTurn(){};
 
 void State_DirectorTurn::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

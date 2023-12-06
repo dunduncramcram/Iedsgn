@@ -12,7 +12,7 @@ public:
     State_MainMenu();
     ~State_MainMenu();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_ShowingInstructions : public State {
@@ -22,7 +22,7 @@ public:
     State_ShowingInstructions();
     ~State_ShowingInstructions();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_ShowingDetailedInstructions : public State {
@@ -32,7 +32,7 @@ public:
     State_ShowingDetailedInstructions();
     ~State_ShowingDetailedInstructions();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_ExitingApp : public State {
@@ -42,7 +42,7 @@ public:
     State_ExitingApp();
     ~State_ExitingApp();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_NamingDirector : public State {
@@ -54,7 +54,7 @@ public:
     State_NamingDirector();
     ~State_NamingDirector();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_SummoningMonster : public State {
@@ -66,7 +66,7 @@ public:
     State_SummoningMonster(State* currentState);
     ~State_SummoningMonster();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_CountingPlayers : public State {
@@ -76,7 +76,7 @@ public:
     State_CountingPlayers();
     ~State_CountingPlayers();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_ChoosingCharacters : public State {
@@ -86,7 +86,7 @@ public:
     State_ChoosingCharacters();
     ~State_ChoosingCharacters();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_DealingCards : public State {
@@ -96,7 +96,7 @@ public:
     State_DealingCards();
     ~State_DealingCards();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_PatientTurn : public State {
@@ -108,7 +108,7 @@ public:
     State_PatientTurn(Patient* turnOwner);
     ~State_PatientTurn();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_ResolvingDilemmas : public State {
@@ -118,7 +118,7 @@ public:
     State_ResolvingDilemmas();
     ~State_ResolvingDilemmas();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_DirectorTurn : public State {
@@ -128,7 +128,7 @@ public:
     State_DirectorTurn();
     ~State_DirectorTurn();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_HungerPangs : public State {
@@ -138,7 +138,7 @@ public:
     State_HungerPangs();
     ~State_HungerPangs();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_RoundEnd : public State {
@@ -148,7 +148,7 @@ public:
     State_RoundEnd();
     ~State_RoundEnd();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_GameOver : public State {
@@ -158,7 +158,7 @@ public:
     State_GameOver();
     ~State_GameOver();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 class State_AskReplay : public State {
@@ -168,7 +168,7 @@ public:
     State_AskReplay();
     ~State_AskReplay();
     void stateLogic(GameController* game);
-    void stateRender();
+    void stateRender(GameController* game);
 };
 
 #endif

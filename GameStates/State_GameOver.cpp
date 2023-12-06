@@ -13,7 +13,7 @@ void State_GameOver::stateLogic(GameController* game){
 state_beginning:
 
     // Pass the winner to the game render
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

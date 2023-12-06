@@ -11,7 +11,7 @@ public:
     State();
     ~State();
     virtual void stateLogic(GameController* game) = 0;
-    virtual void stateRender() = 0;
+    virtual void stateRender(GameController* game) = 0;
 };
 
 #endif

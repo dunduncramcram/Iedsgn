@@ -11,7 +11,7 @@ State_AskReplay::~State_AskReplay(){};
 
 void State_AskReplay::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();

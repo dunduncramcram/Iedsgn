@@ -11,7 +11,7 @@ State_ExitingApp::~State_ExitingApp(){};
 
 void State_ExitingApp::stateLogic(GameController* game){
 state_beginning:
-    stateRender();
+    stateRender(game);
 
     system("pause");
     exit(EXIT_SUCCESS);
