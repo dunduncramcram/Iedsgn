@@ -3,15 +3,38 @@
 #include <iostream>
 
 enum Action::stateOptions : unsigned int {
-    cancel_action, finished_action
+    filler, cancel_action, finished_action
 };
 
-Action::Action(State* currentState, std::string action_text){
+Action::Action(State* currentState, std::string action_name, std::string action_text){
     this->previousState = currentState;
+    this->isCancellable = true;
+    this->actionName = action_name;
+    this->actionText = action_text;
+};
+
+Action::Action(State* currentState, bool canBeCancelled, std::string action_name, std::string action_text){
+    this->previousState = currentState;
+    this->isCancellable = canBeCancelled;
+    this->actionName = action_name;
     this->actionText = action_text;
 };
 
 Action::~Action(){};
+
+void Action::renderState(GameController* game){
+    std::cout <<
+        this->actionName << std::endl;
+
+    std::cout <<
+        this->actionText << std::endl;
+
+    std::cout <<
+        "[1] Cancel" << std::endl <<
+        "[2] Finished" << std::endl <<
+        "Choice: " << std::endl
+    ;
+};
 
 void Action::stateLogic(GameController* game){
 state_beginning:
