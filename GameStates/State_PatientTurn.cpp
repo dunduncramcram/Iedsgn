@@ -30,11 +30,11 @@ state_beginning:
             break;
 
         case take_room_action:
-            
+            game->setState(new Action_DoRoomAction(this));
             break;
 
         case take_resource_action:
-            
+            game->setState(new Action_DoResourceAction(this));
             break;
 
         case end_turn:

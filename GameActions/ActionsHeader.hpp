@@ -250,7 +250,7 @@ public:
 
 class Action_DoResourceAction : public Action {
 public:
-    Action_DoResourceAction(Action* actionType, State* previousState);
+    Action_DoResourceAction(State* previousState);
     ~Action_DoResourceAction();
     void stateRender(GameController* game);
     void stateLogic(GameController* game);
