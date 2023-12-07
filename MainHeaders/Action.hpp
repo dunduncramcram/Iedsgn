@@ -19,8 +19,8 @@ public:
     Action(State* currentState, std::string action_name, std::string action_text);
     Action(State* currentState, bool canBeCancelled, std::string action_name, std::string action_text);
     ~Action();
-    void renderState(GameController* game);
-    void stateLogic(GameController* game);
+    virtual void stateRender(GameController* game);
+    virtual void stateLogic(GameController* game);
     virtual void actionEffects(GameController* game) = 0;
 };
 

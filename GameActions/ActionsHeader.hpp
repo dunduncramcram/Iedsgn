@@ -3,6 +3,7 @@
 #define GAME_ACTIONS_H
 
 #include "../MainHeaders/Action.hpp"
+#include "../MainHeaders/Patient.hpp"
 
 class Action_SummonMonster : public Action {
 public:
@@ -222,10 +223,16 @@ public:
 };
 
 class Action_TargetPatient : public Action {
+private:
+    Patient* selectedPlayer;
+
 public:
-    Action_TargetPatient(Action* actionType, State* previousState);
+    Action_TargetPatient(State* previousState);
     ~Action_TargetPatient();
+    void stateRender(GameController* game);
+    void stateLogic(GameController* game);
     void actionEffects(GameController* game);
+    Patient* getSelected();
 };
 
 #endif

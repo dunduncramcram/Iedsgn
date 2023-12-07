@@ -15,6 +15,7 @@ public:
     enum Turns : unsigned int;
     enum Teams : unsigned int;
 
+
 private:
     State* currentState;
     Director* gameDirector;
@@ -23,12 +24,15 @@ private:
     Turns current_turn;
     Teams gameWinner;
 
+    unsigned int monsterDamage;
+
 public:
 
     GameController();
     ~GameController();
 
     void runApplication();
+    void runState();
     void nextTurn();
     void resetGameSetup();
 
@@ -38,6 +42,7 @@ public:
     Patient* getPatient(unsigned int player_number);
     unsigned int getPatientCount();
     Teams getWinner();
+    unsigned int getMonsterDamage();
 
     void setState(State* newState);
     void setDirector(Director* director);

@@ -10,5 +10,18 @@ Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
 Action_SummonMonster::~Action_SummonMonster(){};
 
 void Action_SummonMonster::actionEffects(GameController* game){
+    // Select a target
 
+    Action_TargetPatient* target = new Action_TargetPatient(this);
+
+    game->setState(target);
+    game->runState();
+
+    Patient* victim = target->getSelected();
+
+    victim->giveBurden(game->getMonsterDamage());
+
+    game->setState(new Action_SummonMonster());
+    game->runState();
+    
 };

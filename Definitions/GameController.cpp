@@ -16,6 +16,7 @@ enum GameController::Teams : unsigned int {
 
 GameController::GameController(){
     this->currentState = new State_MainMenu();
+    this->monsterDamage = 1;
 };
 
 GameController::~GameController(){};
@@ -24,6 +25,10 @@ void GameController::runApplication(){
     while (true) 
         this->currentState->stateLogic(this);
 };
+
+void GameController::runState(){
+    this->currentState->stateLogic(this);
+}
 
 void GameController::nextTurn(){
     if(current_turn == director_turn){
@@ -66,6 +71,10 @@ unsigned int GameController::getPatientCount(){
 GameController::Teams GameController::getWinner(){
     return this->gameWinner;
 };
+
+unsigned int GameController::getMonsterDamage(){
+    return this->monsterDamage;
+}
 
 void GameController::setState(State* newState){
     this->currentState = newState;

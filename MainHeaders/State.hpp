@@ -2,8 +2,6 @@
 #ifndef STATE_H
 #define STATE_H
 
-//#include "GameController.hpp"
-
 class GameController;
 
 class State {
@@ -15,5 +13,7 @@ public:
     virtual void stateLogic(GameController* game) = 0;
     virtual void stateRender(GameController* game) = 0;
 };
+
+#include "GameController.hpp"
 
 #endif

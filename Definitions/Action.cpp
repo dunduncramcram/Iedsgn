@@ -22,7 +22,7 @@ Action::Action(State* currentState, bool canBeCancelled, std::string action_name
 
 Action::~Action(){};
 
-void Action::renderState(GameController* game){
+void Action::stateRender(GameController* game){
     std::cout <<
         this->actionName << std::endl;
 
