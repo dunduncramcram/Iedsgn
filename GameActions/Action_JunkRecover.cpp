@@ -10,5 +10,5 @@ Action_JunkRecover::Action_JunkRecover(State* previousState) : Action (
 Action_JunkRecover::~Action_JunkRecover(){};
 
 void Action_JunkRecover::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

@@ -10,5 +10,5 @@ Action_JunkDiscard::Action_JunkDiscard(State* previousState) : Action (
 Action_JunkDiscard::~Action_JunkDiscard(){};
 
 void Action_JunkDiscard::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

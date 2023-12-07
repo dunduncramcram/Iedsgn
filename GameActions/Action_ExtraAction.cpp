@@ -1,14 +1,21 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_ExtraAction::Action_ExtraAction(Action* actionType, State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Take an Extra Action!", 
+    "You can take an extra action at the cost of one (1) Burden!"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_ExtraAction::~Action_ExtraAction(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_ExtraAction::actionEffects(GameController* game){
+    Action_TargetPatient* targeting = new Action_TargetPatient(this);
 
+    game->setState(targeting);
+    game->runState();
+
+    Patient* target = targeting->getSelected();
+
+    target->giveBurden(1);
 };

@@ -10,5 +10,5 @@ Action_JournalistsAbility::Action_JournalistsAbility(State* previousState) : Act
 Action_JournalistsAbility::~Action_JournalistsAbility(){};
 
 void Action_JournalistsAbility::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

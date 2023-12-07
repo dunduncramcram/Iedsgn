@@ -10,5 +10,5 @@ Action_Dilemma_DiscardAll::Action_Dilemma_DiscardAll(State* previousState) : Act
 Action_Dilemma_DiscardAll::~Action_Dilemma_DiscardAll(){};
 
 void Action_Dilemma_DiscardAll::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

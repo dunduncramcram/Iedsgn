@@ -10,5 +10,5 @@ Action_MovePatient::Action_MovePatient(State* previousState) : Action (
 Action_MovePatient::~Action_MovePatient(){};
 
 void Action_MovePatient::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

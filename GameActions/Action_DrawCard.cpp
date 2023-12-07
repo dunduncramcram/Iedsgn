@@ -10,5 +10,5 @@ Action_DrawCard::Action_DrawCard(State* previousState) : Action (
 Action_DrawCard::~Action_DrawCard(){};
 
 void Action_DrawCard::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

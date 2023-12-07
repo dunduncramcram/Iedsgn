@@ -10,5 +10,5 @@ Action_DebtCollectorsAbility::Action_DebtCollectorsAbility(State* previousState)
 Action_DebtCollectorsAbility::~Action_DebtCollectorsAbility(){};
 
 void Action_DebtCollectorsAbility::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };
