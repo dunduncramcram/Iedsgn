@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_YardAction::Action_YardAction(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Yard: Recover a discarded Junk (put it into hand)", 
+    "(You must be in the Yard to use this Action)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_YardAction::~Action_YardAction(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_YardAction::actionEffects(GameController* game){
 
 };

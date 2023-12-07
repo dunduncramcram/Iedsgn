@@ -1,14 +1,22 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_MedkitRevive::Action_MedkitRevive(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Use [TWO MEDKITS] to Revive any eliminated Patient to 3 Burden", 
+    "(That Player returns to the game with no cards in hand)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_MedkitRevive::~Action_MedkitRevive(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_MedkitRevive::actionEffects(GameController* game){
+    
+    Action_TargetPatient* targeting = new Action_TargetPatient(this);
 
+    game->setState(targeting);
+    game->runState();
+
+    Patient* target = targeting->getSelected();
+
+    target->revive(3);
 };

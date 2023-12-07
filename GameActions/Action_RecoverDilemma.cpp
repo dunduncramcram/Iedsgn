@@ -3,15 +3,15 @@
 
 Action_RecoverDilemma::Action_RecoverDilemma(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Recover a Dilemma!", 
+    "(Choose a discarded Dilemma and put it face up in front of you)"
 ) {};
 
 Action_RecoverDilemma::Action_RecoverDilemma(State* previousState, bool canBeCancelled) : Action (
     previousState, 
     canBeCancelled,
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Recover a Dilemma!", 
+    "(Choose a discarded Dilemma and put it face up in front of you)"
 ) {};
 
 Action_RecoverDilemma::~Action_RecoverDilemma(){};

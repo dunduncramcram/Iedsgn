@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_MoveMonster::Action_MoveMonster(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Move a Monster!", 
+    "Roll a 6-sided die, choose any Monster and move it up to that many Tiles! If it ends its move on any Patient, it then attacks that Patient"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_MoveMonster::~Action_MoveMonster(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
-
+void Action_MoveMonster::actionEffects(GameController* game){
+    // Consider calling the monster attack class
 };

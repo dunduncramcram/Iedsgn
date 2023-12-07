@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_Dilemma_SummonMonster::Action_Dilemma_SummonMonster(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "The Director summons a monster in the Office", 
+    "(Place a monster not on the board as Hidden/face down)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_Dilemma_SummonMonster::~Action_Dilemma_SummonMonster(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_Dilemma_SummonMonster::actionEffects(GameController* game){
 
 };

@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_GiveResource::Action_GiveResource(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Give a resource to another Patient!", 
+    "(This does not cost an Action)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_GiveResource::~Action_GiveResource(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_GiveResource::actionEffects(GameController* game){
 
 };

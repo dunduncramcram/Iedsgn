@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_SecurityRoomAction::Action_SecurityRoomAction(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Security Room: Reveal (turn face up) a Monster", 
+    "(You must be in the Security Room to use this Action)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_SecurityRoomAction::~Action_SecurityRoomAction(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_SecurityRoomAction::actionEffects(GameController* game){
 
 };

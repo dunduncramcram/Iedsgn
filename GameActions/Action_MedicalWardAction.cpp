@@ -1,14 +1,23 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_MedicalWardAction::Action_MedicalWardAction(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Medical Ward: Heal 2 Burden", 
+    "(You must be in the Medical Ward to use this Action)"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_MedicalWardAction::~Action_MedicalWardAction(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_MedicalWardAction::actionEffects(GameController* game){
+
+    Action_TargetPatient* targeting = new Action_TargetPatient(this);
+
+    game->setState(targeting);
+    game->runState();
+
+    Patient* target = targeting->getSelected();
+
+    target->healBurden(2);
 
 };

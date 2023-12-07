@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_Dilemma_ExtraDamage::Action_Dilemma_ExtraDamage(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Monsters give 1 Extra Burden this round", 
+    ""
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_Dilemma_ExtraDamage::~Action_Dilemma_ExtraDamage(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
-
+void Action_Dilemma_ExtraDamage::actionEffects(GameController* game){
+    game->setMonsterDamage(game->getMonsterDamage() + 1);
 };

@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_Dilemma_Hunger::Action_Dilemma_Hunger(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Choose a Patient, their Hunger Pangs cost one more Ration this round", 
+    ""
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_Dilemma_Hunger::~Action_Dilemma_Hunger(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
-
+void Action_Dilemma_Hunger::actionEffects(GameController* game){
+    // Consider adding tracking of this
 };

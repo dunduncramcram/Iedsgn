@@ -36,6 +36,7 @@ state_beginning:
 
     for(int patient_num = 1; patient_num <= patientCount; patient_num++){
         if(game->getPatient(patient_num)->isAlive()){
+            game->setMonsterDamage(1);
             game->nextTurn();
             return;
         }

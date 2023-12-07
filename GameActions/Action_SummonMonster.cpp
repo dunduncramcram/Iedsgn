@@ -4,7 +4,7 @@
 Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
     previousState, 
     "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Chooses any monster not on the board and put it Hidden (face down) in the Office"
 ) {};
 
 Action_SummonMonster::~Action_SummonMonster(){};

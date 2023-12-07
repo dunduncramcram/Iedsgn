@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_JunkDiscard::Action_JunkDiscard(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Use [ONE JUNK] to discard the top card of the deck", 
+    ""
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_JunkDiscard::~Action_JunkDiscard(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_JunkDiscard::actionEffects(GameController* game){
 
 };
