@@ -4,7 +4,7 @@
 
 Action_DoResourceAction::Action_DoResourceAction(State* previousState) : Action (
     previousState, 
-    "Choose a Room Action:", 
+    "Choose a Resource Action:", 
     ""
 ) {};
 
