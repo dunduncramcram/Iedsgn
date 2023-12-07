@@ -21,6 +21,10 @@ public:
     );
     ~Patient();
 
+    void giveBurden(unsigned int amount);
+    void healBurden(unsigned int amount);
+    void revive(unsigned int toBurdenAmt);
+
     Character getCharacter();
     Room getRoom();
     unsigned int getBurden();
