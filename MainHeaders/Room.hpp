@@ -3,20 +3,19 @@
 #define ROOM_H
 
 #include <iostream>
-#include "GameAction.hpp"
+#include "Action.hpp"
 
 class Room {
 private:
     std::string 
         roomName,
         actionText;
-    GameAction
+    Action*
         roomAction;
 public:
     Room(   
         std::string room_name,
-        std::string action_text,
-        GameAction room_action
+        Action* room_action
     );
     ~Room();
     

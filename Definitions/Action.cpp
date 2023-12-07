@@ -30,8 +30,8 @@ void Action::renderState(GameController* game){
         this->actionText << std::endl;
 
     std::cout <<
-        "[1] Cancel" << std::endl <<
-        "[2] Finished" << std::endl <<
+        "[" << cancel_action <<"] Cancel" << std::endl <<
+        "[" << finished_action << "] Finished" << std::endl <<
         "Choice: " << std::endl
     ;
 };

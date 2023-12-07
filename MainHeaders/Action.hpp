@@ -3,7 +3,8 @@
 #define ACTION_H
 
 #include "State.hpp"
-#include <vector>
+
+class State;
 
 class Action : public State {
 protected:
@@ -20,7 +21,7 @@ public:
     ~Action();
     void renderState(GameController* game);
     void stateLogic(GameController* game);
-    virtual void actionEffects(GameController* game);
+    virtual void actionEffects(GameController* game) = 0;
 };
 
 #endif

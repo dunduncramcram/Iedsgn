@@ -1,6 +1,7 @@
 
 #include "./Definitions/State.cpp"
 #include "./Definitions/GameController.cpp"
+#include "./Definitions/Action.cpp"
 #include "./Definitions/Player.cpp"
 #include "./Definitions/Patient.cpp"
 

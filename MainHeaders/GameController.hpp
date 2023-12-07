@@ -9,7 +9,6 @@
 
 class State;
 
-
 class GameController {
 
 public:

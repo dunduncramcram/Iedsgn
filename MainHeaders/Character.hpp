@@ -3,26 +3,24 @@
 #define CHARACTER_H
 
 #include <iostream>
-#include "GameAction.hpp"
+#include "Action.hpp"
 
 class Character {
 private:
     std::string
-        characterName,
-        abilityText;
-    GameAction
+        characterName;
+    Action*
         characterAbility;
 
 public:
     Character(
         std::string name,
-        std::string ability_text
+        Action* ability
     );
     ~Character();
 
-    GameAction doAction();
     std::string getName();
-    std::string getAbilityText();
+    Action* getAbility();
 };
 
 #endif

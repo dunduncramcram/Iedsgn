@@ -221,13 +221,11 @@ public:
     void actionEffects(GameController* game);
 };
 
-class Action_ChoosePatient : public Action {
+class Action_TargetPatient : public Action {
 public:
-    Action_ChoosePatient(Action* actionType, State* previousState);
-    ~Action_ChoosePatient();
+    Action_TargetPatient(Action* actionType, State* previousState);
+    ~Action_TargetPatient();
     void actionEffects(GameController* game);
 };
-
-
 
 #endif
