@@ -26,7 +26,7 @@ state_beginning:
 
     switch(choice){
         case take_character_action:
-            
+            game->setState(turnOwner->getCharacter()->getAbility());
             break;
 
         case take_room_action:
