@@ -224,6 +224,7 @@ public:
 };
 
 // Add an Action_StallPatient class for The Masses
+// Add an Action_MonsterAttack class to handle monster attacks
 
 class Action_TargetPatient : public Action {
 private:

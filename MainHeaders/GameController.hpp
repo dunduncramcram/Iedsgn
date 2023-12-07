@@ -47,6 +47,7 @@ public:
     void setState(State* newState);
     void setDirector(Director* director);
     void setPatientCount(unsigned int count);
+    void setMonsterDamage(unsigned int amount);
 };
 
 #endif

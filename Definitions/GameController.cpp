@@ -92,6 +92,11 @@ void GameController::setPatientCount(unsigned int count){
 };
 
 
+void GameController::setMonsterDamage(unsigned int amount){
+    this->monsterDamage = amount;
+};
+
+
 /*
 private:
     //ViewControl* view;

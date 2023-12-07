@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_PastorsAbility::Action_PastorsAbility(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Use your glorious blessing to dispel evil!", 
+    "Discard a resource, if you do, discard one of any Player's Dilemmas"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_PastorsAbility::~Action_PastorsAbility(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_PastorsAbility::actionEffects(GameController* game){
 
 };

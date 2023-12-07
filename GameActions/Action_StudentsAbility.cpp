@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_StudentsAbility::Action_StudentsAbility(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Consider all possibilities and change your future!", 
+    "Look at the top 5 cards of the deck, then put them back on top in any order"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_StudentsAbility::~Action_StudentsAbility(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_StudentsAbility::actionEffects(GameController* game){
 
 };

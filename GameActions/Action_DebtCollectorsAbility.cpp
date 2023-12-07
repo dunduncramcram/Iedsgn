@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_DebtCollectorsAbility::Action_DebtCollectorsAbility(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Survive and beg for the aid of others!", 
+    "Choose another Patient and they have to give you at least one resource if able"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_DebtCollectorsAbility::~Action_DebtCollectorsAbility(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_DebtCollectorsAbility::actionEffects(GameController* game){
 
 };

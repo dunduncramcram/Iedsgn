@@ -1,14 +1,14 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_JournalistsAbility::Action_JournalistsAbility(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "Lure the horrors and make a new headline!", 
+    "Move a monster to your Room/Tile, it cannot attack you this round"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_JournalistsAbility::~Action_JournalistsAbility(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_JournalistsAbility::actionEffects(GameController* game){
 
 };
