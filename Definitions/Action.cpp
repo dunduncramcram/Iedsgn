@@ -56,3 +56,7 @@ state_beginning:
             break;
     }
 };
+
+std::string Action::getName(){
+    return this->actionName;
+};

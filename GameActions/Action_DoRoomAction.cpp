@@ -11,8 +11,16 @@ Action_DoRoomAction::Action_DoRoomAction(State* previousState) : Action (
 Action_DoRoomAction::~Action_DoRoomAction(){};
 
 void Action_DoRoomAction::stateRender(GameController* game){
+
+    Action_MedicalWardAction* medward = new Action_MedicalWardAction(this);
+    Action_SecurityRoomAction* security = new Action_SecurityRoomAction(this);
+    Action_YardAction* yard = new Action_YardAction(this);
+
     std::cout <<
-        this->actionName << std::endl;
+        this->actionName << std::endl << 
+        "[1] " << medward->getTitle() << std::endl << 
+        this->actionName << std::endl << 
+        this->actionName << std::endl << 
 
     unsigned int patientCount = game->getPatientCount();
 

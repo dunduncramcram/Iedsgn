@@ -22,6 +22,7 @@ public:
     virtual void stateRender(GameController* game);
     virtual void stateLogic(GameController* game);
     virtual void actionEffects(GameController* game) = 0;
+    std::string getName();
 };
 
 #endif
