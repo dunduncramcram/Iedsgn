@@ -241,7 +241,7 @@ public:
 
 class Action_DoRoomAction : public Action {
 public:
-    Action_DoRoomAction(Action* actionType, State* previousState);
+    Action_DoRoomAction(State* previousState);
     ~Action_DoRoomAction();
     void stateRender(GameController* game);
     void stateLogic(GameController* game);
