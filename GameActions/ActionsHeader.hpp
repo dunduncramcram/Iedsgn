@@ -239,4 +239,22 @@ public:
     Patient* getSelected();
 };
 
+class Action_DoRoomAction : public Action {
+public:
+    Action_DoRoomAction(Action* actionType, State* previousState);
+    ~Action_DoRoomAction();
+    void stateRender(GameController* game);
+    void stateLogic(GameController* game);
+    void actionEffects(GameController* game);
+};
+
+class Action_DoResourceAction : public Action {
+public:
+    Action_DoResourceAction(Action* actionType, State* previousState);
+    ~Action_DoResourceAction();
+    void stateRender(GameController* game);
+    void stateLogic(GameController* game);
+    void actionEffects(GameController* game);
+};
+
 #endif
