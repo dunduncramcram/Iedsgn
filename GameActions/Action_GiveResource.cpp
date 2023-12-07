@@ -10,5 +10,5 @@ Action_GiveResource::Action_GiveResource(State* previousState) : Action (
 Action_GiveResource::~Action_GiveResource(){};
 
 void Action_GiveResource::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

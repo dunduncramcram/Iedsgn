@@ -10,5 +10,5 @@ Action_YardAction::Action_YardAction(State* previousState) : Action (
 Action_YardAction::~Action_YardAction(){};
 
 void Action_YardAction::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

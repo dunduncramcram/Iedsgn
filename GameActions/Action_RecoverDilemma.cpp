@@ -17,5 +17,5 @@ Action_RecoverDilemma::Action_RecoverDilemma(State* previousState, bool canBeCan
 Action_RecoverDilemma::~Action_RecoverDilemma(){};
 
 void Action_RecoverDilemma::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

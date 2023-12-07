@@ -10,5 +10,5 @@ Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
 Action_SummonMonster::~Action_SummonMonster(){};
 
 void Action_SummonMonster::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

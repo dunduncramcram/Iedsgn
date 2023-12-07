@@ -10,5 +10,5 @@ Action_SecurityRoomAction::Action_SecurityRoomAction(State* previousState) : Act
 Action_SecurityRoomAction::~Action_SecurityRoomAction(){};
 
 void Action_SecurityRoomAction::actionEffects(GameController* game){
-
+    //Empty on Purpose
 };

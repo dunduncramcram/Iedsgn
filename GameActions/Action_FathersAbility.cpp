@@ -10,7 +10,6 @@ Action_FathersAbility::Action_FathersAbility(State* previousState) : Action (
 Action_FathersAbility::~Action_FathersAbility(){};
 
 void Action_FathersAbility::actionEffects(GameController* game){
-
     Action_TargetPatient* targeting = new Action_TargetPatient(this);
 
     game->setState(targeting);
