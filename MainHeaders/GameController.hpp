@@ -40,6 +40,7 @@ public:
     void patientsWin();
 
     Patient* getPatient(unsigned int player_number);
+    Patient* getTurnPatient();
     unsigned int getPatientCount();
     Teams getWinner();
     unsigned int getMonsterDamage();
