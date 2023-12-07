@@ -30,7 +30,7 @@ state_beginning:
             Action* action = character->getAbility();
 
             action->actionEffects();
-            game->setState(turnOwner->getCharacter()->getAbility());
+            game->setState(owner->getCharacter()->getAbility());
             break;
 
         case take_room_action:
