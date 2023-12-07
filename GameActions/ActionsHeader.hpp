@@ -224,6 +224,13 @@ public:
 };
 
 // Add an Action_StallPatient class for The Masses
+class Action_StallPatient : public Action {
+public:
+    Action_StallPatient(State* previousState);
+    ~Action_StallPatient();
+    void actionEffects(GameController* game);
+};
+
 // Add an Action_MonsterAttack class to handle monster attacks
 
 class Action_TargetPatient : public Action {

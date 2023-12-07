@@ -37,3 +37,7 @@ void Patient::revive(unsigned int toBurdenAmt){
 bool Patient::isAlive(){
     return !(this->isDead);
 };
+
+Character* Patient::getCharacter(){
+    return this->chosenCharacter;
+}
