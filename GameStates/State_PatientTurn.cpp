@@ -26,10 +26,6 @@ state_beginning:
 
     switch(choice){
         case take_character_action:
-            Character* character = this->owner->getCharacter();
-            Action* action = character->getAbility();
-
-            action->actionEffects();
             game->setState(owner->getCharacter()->getAbility());
             break;
 
