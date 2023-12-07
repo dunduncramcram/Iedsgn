@@ -5,9 +5,13 @@
 using namespace std;
 
 void State_MainMenu::stateRender(GameController* game){
-    cout << "Main Menu:" << endl
-        << "[1] Start a game" << endl << "[2] See Instructions" << endl
-        << "[3] Exit" << endl << "Enter your choice: ";
+    cout 
+        << "Main Menu:" << endl
+        << "[1] Start a game" << endl 
+        << "[2] See Instructions" << endl
+        << "[3] Exit" << endl 
+        << "Enter your choice: "
+    ;
 };
 
 void State_ShowingInstructions::stateRender(GameController* game){
