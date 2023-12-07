@@ -19,11 +19,14 @@ state_beginning:
     int input; std::cin >> input;
     std::cin.ignore(); std::cin.clear();
 
+    if(owner->hasDoneAction()){
+        owner->giveBurden(1);
+    }
+
     stateOptions
         choice = static_cast<stateOptions>(input);
 
     // Process patient actions
-
     switch(choice){
         case take_character_action:
             game->setState(owner->getCharacter()->getAbility());

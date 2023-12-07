@@ -8,6 +8,8 @@ Patient::Patient(
     Character* character
 ) : Player(name) {
     this->chosenCharacter = character;
+    isDead = false;
+    hasTakenAction = false;
 };
 
 Patient::~Patient(){};
@@ -37,6 +39,10 @@ void Patient::revive(unsigned int toBurdenAmt){
 bool Patient::isAlive(){
     return !(this->isDead);
 };
+
+bool Patient::hasDoneAction(){
+    return hasTakenAction;
+}
 
 Character* Patient::getCharacter(){
     return this->chosenCharacter;

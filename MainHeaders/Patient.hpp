@@ -12,7 +12,7 @@ private:
     Character* chosenCharacter;
     Room* currentRoom;
     unsigned int burdenCount;
-    bool isDead;
+    bool isDead, hasTakenAction;
     
 public:
     Patient(
@@ -29,6 +29,7 @@ public:
     Room getRoom();
     unsigned int getBurden();
     bool isAlive();
+    bool hasDoneAction();
 };
 
 #endif
