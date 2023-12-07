@@ -1,27 +1,26 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_CherubAttack::Action_CherubAttack(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "The Cherub Attacks!", 
+    "Cursing the unrighteous, the Cherub's victim receives Burden and the Director recovers a Dilemma. Stall (remove from board) the Cherub"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_CherubAttack::~Action_CherubAttack(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
-    // Select a target
+void Action_CherubAttack::actionEffects(GameController* game){
 
-    Action_TargetPatient* target = new Action_TargetPatient(this);
+    Action_TargetPatient* targeting = new Action_TargetPatient(this);
 
-    game->setState(target);
+    game->setState(targeting);
     game->runState();
 
-    Patient* victim = target->getSelected();
+    Patient* victim = targeting->getSelected();
 
     victim->giveBurden(game->getMonsterDamage());
 
-    game->setState(new Action_SummonMonster());
+    game->setState(new Action_RecoverDilemma(this, false));
     game->runState();
     
 };

@@ -1,14 +1,23 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_GroomAttack::Action_GroomAttack(State* previousState) : Action (
     previousState, 
-    "Summon a Monster!", 
-    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+    "The Groom Attacks!", 
+    "Preying on the mentally infirm, the Groom gives an extra Burden to its victims. Stall (remove from board) the Groom"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_GroomAttack::~Action_GroomAttack(){};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+void Action_GroomAttack::actionEffects(GameController* game){
+    
+    Action_TargetPatient* targeting = new Action_TargetPatient(this);
 
+    game->setState(targeting);
+    game->runState();
+
+    Patient* victim = targeting->getSelected();
+
+    victim->giveBurden(game->getMonsterDamage() + 1);
+    
 };

@@ -204,6 +204,7 @@ public:
 class Action_RecoverDilemma : public Action {
 public:
     Action_RecoverDilemma(State* previousState);
+    Action_RecoverDilemma(State* previousState, bool canBeCancelled);
     ~Action_RecoverDilemma();
     void actionEffects(GameController* game);
 };
@@ -221,6 +222,8 @@ public:
     ~Action_ExtraAction();
     void actionEffects(GameController* game);
 };
+
+// Add an Action_StallPatient class for The Masses
 
 class Action_TargetPatient : public Action {
 private:

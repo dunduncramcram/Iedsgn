@@ -1,14 +1,21 @@
 
 #include "ActionsHeader.hpp"
 
-Action_SummonMonster::Action_SummonMonster(State* previousState) : Action (
+Action_RecoverDilemma::Action_RecoverDilemma(State* previousState) : Action (
     previousState, 
     "Summon a Monster!", 
     "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
 ) {};
 
-Action_SummonMonster::~Action_SummonMonster(){};
+Action_RecoverDilemma::Action_RecoverDilemma(State* previousState, bool canBeCancelled) : Action (
+    previousState, 
+    canBeCancelled,
+    "Summon a Monster!", 
+    "The Director chooses any monster not on the board and puts it Hidden (face down) in the Office"
+) {};
 
-void Action_SummonMonster::actionEffects(GameController* game){
+Action_RecoverDilemma::~Action_RecoverDilemma(){};
+
+void Action_RecoverDilemma::actionEffects(GameController* game){
 
 };
